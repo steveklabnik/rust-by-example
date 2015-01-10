@@ -1,5 +1,4 @@
 #![deny(warnings)]
-#![feature(int_uint)]
 #![feature(plugin)]
 
 #![allow(unstable)]
@@ -38,7 +37,7 @@ fn main() {
 
     let mut entries = range(0, nexamples).map(|_| {
         rx.recv().unwrap()
-    }).collect::<Vec<(Vec<uint>, String)>>();
+    }).collect::<Vec<(Vec<usize>, String)>>();
 
     entries.sort_by(|&(ref i, _), &(ref j, _)| i.cmp(j));
 
